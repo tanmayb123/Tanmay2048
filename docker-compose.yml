@@ -3,5 +3,5 @@ app:
   ports:
     - "8080:8080"
   volumes:
-    - .:/Kitura-Starter
-  command: bash -c "cd /Kitura-Starter && swift package --build-path .build-ubuntu clean && swift build --build-path .build-ubuntu && swift test --build-path .build-ubuntu"
+    - .:/NN2048
+  command: bash -c "cd /NN2048 && swift package --build-path .build-ubuntu clean && swift build --build-path .build-ubuntu && swift test --build-path .build-ubuntu"

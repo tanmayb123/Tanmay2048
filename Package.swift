@@ -20,31 +20,20 @@
 import PackageDescription
 
 let package = Package(
-    name: "KituraStarter",
+    name: "NN2048",
     products: [
       .executable(
-        name: "Kitura-Starter",
-        targets:  ["Kitura-Starter", "Controller"]
+        name: "NN2048",
+        targets:  ["NN2048"]
       )
     ],
     dependencies: [
       .package(url: "https://github.com/IBM-Swift/Kitura.git", from: "2.6.0"),
-      .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", from: "1.8.0"),
-      .package(url: "https://github.com/IBM-Swift/CloudEnvironment.git", from: "9.0.0"),
-      .package(url: "https://github.com/IBM-Swift/Health.git", from: "1.0.0")
     ],
     targets: [
       .target(
-        name: "Kitura-Starter",
-        dependencies: ["Kitura", "HeliumLogger", "Controller"]
-      ),
-      .target(
-        name: "Controller",
-        dependencies: ["Kitura", "CloudEnvironment", "Health"]
-      ),
-      .testTarget(
-        name: "ControllerTests",
-        dependencies: ["Controller"]
+        name: "NN2048",
+        dependencies: ["Kitura"]
       )
     ]
 )

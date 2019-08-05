@@ -14,25 +14,24 @@
 # limitations under the License.
 ##
 
-# Builds a Docker image with all the dependencies for compiling and running the Kitura-Starter sample application.
+# Builds a Docker image with all the dependencies for compiling and running the NN2048 sample application.
 
 FROM ibmcom/swift-ubuntu:5.0
-MAINTAINER IBM Swift Engineering at IBM Cloud
-LABEL Description="Docker image for building and running the Kitura-Starter sample application."
+MAINTAINER Tanmay Bakshi
+LABEL Description="Docker image for building and running the Tanmay2048 Application."
 
 # Expose default port for Kitura
 EXPOSE 8080
 
-RUN mkdir /Kitura-Starter
+RUN mkdir /NN2048
 
-ADD Sources /Kitura-Starter/Sources
-ADD Tests /Kitura-Starter/Tests
-ADD public /Kitura-Starter/public
-ADD Package.swift /Kitura-Starter
-ADD Package.resolved /Kitura-Starter
-ADD LICENSE /Kitura-Starter
-ADD .swift-version /Kitura-Starter
-RUN cd /Kitura-Starter && swift build
+ADD Sources /NN2048/Sources
+ADD Tests /NN2048/Tests
+ADD public /NN2048/public
+ADD Package.swift /NN2048
+ADD Package.resolved /NN2048
+ADD LICENSE /NN2048
+ADD .swift-version /NN2048
+RUN cd /NN2048 && swift build
 
-#CMD ["/Kitura-Starter/.build/debug/Kitura-Starter"]
-CMD [ "sh", "-c", "cd /Kitura-Starter && .build/x86_64-unknown-linux/debug/Kitura-Starter" ]
+CMD [ "sh", "-c", "cd /NN2048 && .build/x86_64-unknown-linux/debug/NN2048" ]
