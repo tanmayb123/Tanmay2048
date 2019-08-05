@@ -137,7 +137,7 @@ GameManager.prototype.automove = function () {
       cleanedTiles.push(tile.value)
     }
   });
-  fetch('http://tanmay2048.mybluemix.net/analyze?board=' + cleanedTiles.join("%2C")).then(function (response) {
+  fetch('http://localhost:8080/analyze?board=' + cleanedTiles.join("%2C")).then(function (response) {
     response.text().then(function (text) {
         const directionMapping = {"up": 0, "down": 2, "left": 3, "right": 1};
         self.move(directionMapping[text]);
